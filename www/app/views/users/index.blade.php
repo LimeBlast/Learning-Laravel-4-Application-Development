@@ -1,3 +1,5 @@
+@extends('layouts.users')
+
 @section('main')
 
 	<h1>All Users</h1>
@@ -36,6 +38,8 @@
 			</tbody>
 
 		</table>
+
+		{{ $users->links(); }} 
 	@else
 		There are no users
 	@endif

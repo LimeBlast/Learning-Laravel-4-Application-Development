@@ -5,6 +5,13 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+	protected $guarded = array('id');
+	
+	public static $rules = array(
+		'name'  => 'required|min:5',
+		'email' => 'required|email'
+	);
+
 	/**
 	 * The database table used by the model.
 	 *
